@@ -24,7 +24,7 @@ const server = http.createServer(async (req, res) => {
                 data += chunk;
             })
             req.on('end', async () => {
-                const { url, key } = isValidJson(data) ? JSON.parse(data) : {};
+                let { url, key } = isValidJson(data) ? JSON.parse(data) : {};
                 key = slugify(key, {
                     lower: true,      // lowercase
                     strict: true,     // remove special chars
