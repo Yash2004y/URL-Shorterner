@@ -14,7 +14,7 @@ const server = http.createServer(async (req, res) => {
     console.log(req.url);
     try {
         if (req.url == "/") {
-            let file = "index.html";
+            let file = "public/index.html";
             res.setHeader('Content-Type', getFileContentType(file));
             res.end(getFileContent(file));
         }
