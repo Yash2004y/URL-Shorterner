@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { getFileContent, getFileContentType } from './FileHelper.js';
 import querystring from 'querystring';
 import { addOrUpdate, getByKey, getData, isValidJson } from './db.js';
+import slugify from 'slugify';
 dotenv.config();
 http.ServerResponse.prototype.sentResponse = function (object, statusCode = 200) {
     this.statusCode = statusCode;
@@ -24,13 +25,18 @@ const server = http.createServer(async (req, res) => {
             })
             req.on('end', async () => {
                 const { url, key } = isValidJson(data) ? JSON.parse(data) : {};
+                key = slugify(key, {
+                    lower: true,      // lowercase
+                    strict: true,     // remove special chars
+                    trim: true
+                });;
                 let notAllowKey = ['key', 'store', 'getLinks', 'index.css'];
                 if (notAllowKey.includes(key)) {
                     res.sentResponse({ status: false, message: "This key not allowed." });
                 } else {
-                    
+
                     await addOrUpdate({ url, key });
-    
+
                     res.sentResponse({ status: true, message: "Your url added." });
                 }
                 // res.statusCode = 200;
