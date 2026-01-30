@@ -16,14 +16,6 @@ const server = http.createServer(async (req, res) => {
             let file = "index.html";
             res.setHeader('Content-Type', getFileContentType(file));
             res.end(getFileContent(file));
-        } else if (req.url == "/index.css") {
-            let file = "index.css";
-            res.setHeader('Content-Type', getFileContentType(file));
-            res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
-            res.setHeader('Pragma', 'no-cache');
-            res.setHeader('Expires', '0');
-            res.end(getFileContent(file));
-
         }
         else if (req.method === "POST" && req.url === "/store") {
             let data = '';
