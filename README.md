@@ -30,8 +30,9 @@ This project uses a **JSON file for data storage** instead of a database, making
 - **Storage:** JSON file
 
 ---
-
 ## 📂 Project Structure
+
+```text
 url-shortener/
 │
 ├── node_modules/             # Project dependencies
@@ -53,4 +54,3 @@ url-shortener/
 ├── package-lock.json         # Dependency lock file
 │
 └── README.md                 # Project documentation
-
