@@ -35,22 +35,24 @@ This project uses a **JSON file for data storage** instead of a database, making
 ```text
 url-shortener/
 │
-├── node_modules/             # Project dependencies
+├── db/
+│   ├── db.js                     # Handles JSON data operations
+│   └── URL_HELPER_DB.json        # Stores short & original URLs
 │
-├── .env                      # Environment variables
-├── .gitignore                # Git ignored files
-├── .node-version             # Node.js version configuration
+├── public/
+│   └── index.html                # Frontend UI
 │
-├── db.js                     # JSON database read/write logic
-├── FileHelper.js             # Helper functions (file handling, content type, etc.)
+├── screenshots/
+│   └── url_shortener_screenshot.png  # Project UI screenshot
 │
-├── index.html                # Frontend UI
+├── Utils/
+│   └── FileHelper.js             # Utility/helper functions
 │
-├── server.js                 # Node.js HTTP server and routing
+├── .env                          # Environment variables
+├── .gitignore                    # Git ignored files
+├── .node-version                 # Node.js version config
 │
-├── URL_HELPER_DB.json        # JSON file used as data storage
-│
-├── package.json              # Project metadata & scripts
-├── package-lock.json         # Dependency lock file
-│
-└── README.md                 # Project documentation
+├── server.js                     # Node.js server & routing logic
+├── package.json                  # Project scripts & metadata
+├── package-lock.json
+└── README.md                     # Documentation
