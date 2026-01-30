@@ -1,11 +1,12 @@
 import { existsSync } from 'fs';
 import fs from 'fs/promises';
+import path from 'path';
 
 const currentDirectory = import.meta.dirname;
-const DB_FILE_NAME = "URL_HELPER_DB.json";
+const DB_FILE_NAME = path.join(currentDirectory, "URL_HELPER_DB.json");
 
 export const saveData = async (object) => {
-    return await fs.writeFile(DB_FILE_NAME, JSON.stringify(object));
+    return await fs.writeFile(DB_FILE_NAME, JSON.stringify(object, null, 2));
 }
 
 export const getData = async () => {

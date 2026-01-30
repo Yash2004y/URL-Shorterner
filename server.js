@@ -1,8 +1,8 @@
 import http from 'http';
 import dotenv from 'dotenv';
-import { getFileContent, getFileContentType } from './FileHelper.js';
+import { getFileContent, getFileContentType } from './Utils/FileHelper.js';
 import querystring from 'querystring';
-import { addOrUpdate, getByKey, getData, isValidJson } from './db.js';
+import { addOrUpdate, getByKey, getData, isValidJson } from './db/db.js';
 import slugify from 'slugify';
 dotenv.config();
 http.ServerResponse.prototype.sentResponse = function (object, statusCode = 200) {
