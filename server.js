@@ -29,7 +29,7 @@ const server = http.createServer(async (req, res) => {
                     lower: true,      // lowercase
                     strict: true,     // remove special chars
                     trim: true
-                });;
+                });
                 let notAllowKey = ['key', 'store', 'getLinks', 'index.css'];
                 if (notAllowKey.includes(key)) {
                     res.sentResponse({ status: false, message: "This key not allowed." });
