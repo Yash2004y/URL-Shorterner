@@ -6,7 +6,7 @@ This project uses a **JSON file for data storage** instead of a database, making
 ---
 
 ## 📸 Screenshots
-![Create Short URL And Links List](url_shortener_screenshoot.png)
+![URL Shortener UI](screenshots/url_shortener_screenshot.png)
 
 ---
 
